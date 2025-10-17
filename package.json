@@ -1,0 +1,23 @@
+{
+  "name": "express---backend",
+  "version": "1.0.0",
+  "description": "Mi servidor de express",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "prueba"
+  ],
+  "author": "Alexis Zambrano+",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.15.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
