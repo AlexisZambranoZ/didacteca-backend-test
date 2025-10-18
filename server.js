@@ -21,7 +21,7 @@ app.use((err, req, res, next) => {
 
 connectDB()
   .then(() => {
-    console.log('Conexión a MongoDB realizada ✅');
+    console.log('Conexión a MongoDB realizada');
     app.listen(port, () => {
       console.log(`Servidor escuchando en http://localhost:${port}`);
     });
