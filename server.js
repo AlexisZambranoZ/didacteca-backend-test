@@ -4,11 +4,9 @@ const app = express();
 
 app.use(express.json());
 
-// Montar routers
 app.use('/users', require('./routes/users.routes'));
-app.use('/books', require('./routes/book.routes')); // NOTA: singular 'book.routes'
+app.use('/books', require('./routes/book.routes'));
 
-// Conectar a MongoDB
 connectDB();
 
 module.exports = app;
