@@ -1,12 +1,27 @@
 const Book = require('../models/book.model');
 
-exports.getBooksByUserId = async (req, res) => {
+exports.getBooks = async (req, res) => {
   try {
     const { userId } = req.params;
     const books = await Book.find({ user: userId });
     res.json(books);
   } catch (error) {
     res.status(500).json({ message: 'Error al obtener libros', error });
+  }
+};
+
+exports.getBookByUserId = async (req, res) => {
+  try {
+    const { bookId } = req.params;
+    const book = await Book.findById(bookId);
+
+    if (!book) {
+      return res.status(404).json({ message: `El libro con ID ${bookId} no existe` });
+    }
+
+    res.json(book);
+  } catch (error) {
+    res.status(500).json({ message: 'Error al obtener el libro', error });
   }
 };
 
