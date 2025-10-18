@@ -1,6 +1,11 @@
 const connectDB = require('./config/db');
 const express = require('express');
 const app = express();
+const port = process.env.PORT;
+
+app.listen(port, () => {
+  console.log(`Servidor escuchando en http://localhost:${port}`);
+});
 
 app.use(express.json());
 
