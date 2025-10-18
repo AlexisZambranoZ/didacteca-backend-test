@@ -83,3 +83,14 @@ Permite gestionar usuarios y sus libros asociados.
    - Para realizar pruebas, puedes usar herramientas como **Postman** , utilizando los endpoints definidos anteriormente.
 
 ---
+
+## RECOMENDACION - Colección de pruebas de Postman
+
+Esta carpeta contiene la colección de Postman para probar todos los endpoints de la API.
+
+### Cómo usarla
+
+1. Abre **Postman**.
+2. Haz clic en **Import → File**.
+3. Selecciona el archivo `ApiTestCollection.json` dentro de la carpeta `docs`.
+4. La colección se importará y podrás ejecutar todos los endpoints de prueba.
