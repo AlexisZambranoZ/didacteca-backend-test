@@ -1,14 +1,18 @@
-const mysql = require("mysql2/promise"); // usar Promises para async/await
+require("dotenv").config();
+const mongoose = require("mongoose");
 
-// Configuración de la conexión
-const pool = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "root", // cambia por tu contraseña
-  database: "usersdb",
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-});
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
-module.exports = pool;
+    console.log("------------------Conexion a mongoDB realizada------------------ ");
+  } catch (error) {
+    console.error("!!!!!!!!!!!!!!!!!! Error al conectar a mongoDB:", error);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
